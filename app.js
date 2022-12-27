@@ -8,17 +8,17 @@ const customBtn = document.querySelector(".custom-btn");
 const peopleText = document.getElementById("people");
 const amount = document.getElementById("amount");
 const total = document.getElementById("total");
-const resetBtn=document.querySelector('.btn');
-const alertP=document.querySelector('.alert');
+const resetBtn = document.querySelector('.btn');
+const alertP = document.querySelector('.alert');
 
 
-fiveBtn.addEventListener('click',()=>{
+fiveBtn.addEventListener('click', () => {
   let val = parseInt(fiveBtn.textContent);
   calculateTip(val);
   console.log(val);
 });
 
-tenBtn.addEventListener('click',()=>{
+tenBtn.addEventListener('click', () => {
   let val = parseInt(tenBtn.textContent);
   calculateTip(val);
   console.log(val);
@@ -31,13 +31,13 @@ fifteenBtn.addEventListener("click", () => {
   console.log(val);
 });
 
-twentyFiveBtn.addEventListener('click',()=>{
+twentyFiveBtn.addEventListener('click', () => {
   let val = parseInt(twentyFiveBtn.textContent);
   calculateTip(val);
   console.log(val);
 });
 
-fiftyBtn.addEventListener('click',()=>{
+fiftyBtn.addEventListener('click', () => {
   let val = parseInt(fiftyBtn.textContent);
   calculateTip(val);
   console.log(val);
@@ -50,7 +50,7 @@ customBtn.addEventListener("keypress", function (event) {
   }
 });
 
-resetBtn.addEventListener('click',()=>{
+resetBtn.addEventListener('click', () => {
   location.reload();
 })
 
@@ -59,13 +59,13 @@ function calculateTip(val) {
     billText.classList = "error-input";
   } else if (!validVal(parseInt(peopleText.value))) {
     peopleText.classList = "error-input";
-    alertP.classList="display";
+    alertP.classList = "display";
   } else {
     const totalVal = (parseInt(billText.value) * val) / 100;
     const tip_amountVal = totalVal / parseInt(peopleText.value);
     total.textContent = `$${totalVal.toFixed(2)}`;
     amount.textContent = `$${tip_amountVal.toFixed(2)}`;
-    resetBtn.disabled=false;
+    resetBtn.disabled = false;
   }
 }
 
@@ -80,7 +80,7 @@ function calculateTipV2() {
     const tip_amountVal = totalVal / parseInt(peopleText.value);
     total.textContent = `$${totalVal.toFixed(2)}`;
     amount.textContent = `$${tip_amountVal.toFixed(2)}`;
-    resetBtn.disabled=false;
+    resetBtn.disabled = false;
   }
 }
 
